@@ -1,0 +1,36 @@
+# ---- python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# tooling caches
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.ty/
+.coverage
+htmlcov/
+
+# uv
+# uv.lock IS committed
+
+# ---- frontend (see also frontend/.gitignore) ----
+frontend/node_modules/
+# vite build output lands in src/foxhound/dist via vite.config.ts
+src/foxhound/dist/
+
+# foxhound runtime state
+*.fxd
+.foxhound/
+
+# ---- editors / os ----
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.sw?

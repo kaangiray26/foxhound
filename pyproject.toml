@@ -1,0 +1,36 @@
+[project]
+name = "foxhound"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "kaangiray26", email = "kaangiray26@protonmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi[standard]>=0.162.7",
+    "httpx2[http2]>=2.16.0",
+    "rich>=13.0.0",
+    "h2>=4.0.0",
+    "typer>=0.29.1",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+foxhound = "foxhound:main"
+fxd = "foxhound:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.7.0",
+    "ruff>=0.17.5",
+    "ty>=0.0.104",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# typer's API requires callables in argument defaults
+"src/foxhound/cli.py" = ["B008"]
